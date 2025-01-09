@@ -95,7 +95,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `readlink`
 * [ ] `runcon`
 * [ ] `seq`
-* [s] `sleep`
+* [x] `sleep`
 * [ ] `stat`
 * [ ] `stdbuf`
 * [ ] `stty`
