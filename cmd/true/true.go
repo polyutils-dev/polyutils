@@ -35,7 +35,7 @@ for details about the options it supports.
 	}
 
 	if *flagVersion {
-		os.Stdout.WriteString("yes (goreutils) 0.1.0\n")
+		os.Stdout.WriteString("true (goreutils) 0.1.0\n")
 		return
 	}
 }
