@@ -45,3 +45,4 @@ $RECYCLE.BIN/
 
 # when new commands are added, their executables must be ignored here
 /yes
+/true

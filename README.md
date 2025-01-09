@@ -102,7 +102,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `tee`
 * [ ] `test`
 * [ ] `timeout`
-* [ ] `true`
+* [x] `true`
 * [ ] `tty`
 * [ ] `uname`
 * [ ] `unlink`
