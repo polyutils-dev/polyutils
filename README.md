@@ -110,7 +110,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `users`
 * [ ] `who`
 * [ ] `whoami`
-* [ ] `yes`
+* [x] `yes`
 * [ ] `[`
 
 ## License
