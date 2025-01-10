@@ -78,7 +78,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `env`
 * [ ] `expr`
 * [ ] `factor`
-* [ ] `false`
+* [x] `false`
 * [ ] `groups`
 * [ ] `hostid`
 * [ ] `id`
