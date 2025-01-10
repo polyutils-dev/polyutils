@@ -74,7 +74,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `date`
 * [ ] `dirname`
 * [ ] `du`
-* [ ] `echo`
+* [x] `echo`
 * [ ] `env`
 * [ ] `expr`
 * [ ] `factor`
