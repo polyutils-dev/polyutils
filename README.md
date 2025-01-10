@@ -109,7 +109,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `uptime`
 * [ ] `users`
 * [ ] `who`
-* [ ] `whoami`
+* [x] `whoami`
 * [x] `yes`
 * [ ] `[`
 
