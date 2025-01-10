@@ -112,6 +112,9 @@ The GNU coreutils, rewritten in Go.
 * [ ] `who`
 * [x] `whoami`
 * [x] `yes`
+  * So some info: when built with `go`, it's extremely fast, but the binary is
+    bigger. However, with `tinygo`, it's about half as fast, but the binary is
+    much smaller. You should choose which is more important to you.
 * [ ] `[`
 
 ## License
