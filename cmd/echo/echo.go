@@ -7,7 +7,7 @@ func main() {
 		if i == 0 {
 			continue // Skip the first argument, which is the executable name.
 		}
-		print(arg+" ")
+		print(arg + " ")
 	}
 	println()
 }
