@@ -44,9 +44,9 @@ Repeatedly output a line with all specified STRING(s), or 'y'.
 	}
 	str += "\n"
 
-	value := []byte(str)
+	value := bytes.Repeat([]byte(str), 100_000_000)
 
 	for {
-		os.Stdout.Write(bytes.Repeat(value, 100_000_000))
+		os.Stdout.Write(value)
 	}
 }
