@@ -3,6 +3,7 @@
 The GNU coreutils, rewritten in Go.
 
 [![License: Unlicense](https://img.shields.io/badge/license-unlicense-blue.svg)](./LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/codeberg.org/goreutils/goreutils)](https://goreportcard.com/report/codeberg.org/goreutils/goreutils)
 
 ## Roadmap
 
