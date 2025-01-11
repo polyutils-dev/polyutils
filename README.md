@@ -34,7 +34,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `vdir`
 * [ ] `b2sum`
 * [ ] `base32`
-* [ ] `base64`
+* [x] `base64`
 * [ ] `basenc`
 * [ ] `cat`
 * [ ] `cksum`
