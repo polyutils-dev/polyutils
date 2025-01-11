@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
-	"io"
 	"encoding/base64"
+	"io"
+	"os"
 
 	flag "github.com/spf13/pflag"
 )
@@ -70,10 +70,10 @@ from any other non-alphabet bytes in the encoded stream.
 	if len(args) == 1 && args[0] != "-" {
 		f, err = os.Open(args[0])
 		if err == os.ErrPermission {
-			die(args[0]+": Permission denied")
+			die(args[0] + ": Permission denied")
 		}
 		if err != nil {
-			die(args[0]+": No such file or directory")
+			die(args[0] + ": No such file or directory")
 		}
 	}
 	defer f.Close()
@@ -113,7 +113,7 @@ func encode(in []byte, wrap int) {
 	encoded := base64.StdEncoding.EncodeToString(in)
 	for i := 0; i < len(encoded); i++ {
 		print(string(encoded[i]))
-		if (i + 1) % wrap == 0 {
+		if (i+1)%wrap == 0 {
 			println()
 		}
 	}
