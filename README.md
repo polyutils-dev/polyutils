@@ -33,7 +33,7 @@ The GNU coreutils, rewritten in Go.
 * [ ] `truncate`
 * [ ] `vdir`
 * [ ] `b2sum`
-* [ ] `base32`
+* [x] `base32`
 * [x] `base64`
 * [ ] `basenc`
 * [ ] `cat`
