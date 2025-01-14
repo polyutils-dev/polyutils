@@ -107,7 +107,7 @@ func decode(in []byte, ignoreGarbage bool) {
 		die("invalid input")
 	}
 	os.Stdout.Write(out)
-	os.Stdout.Write('\n')
+	os.Stdout.Write([]byte{'\n'})
 }
 
 func encode(in []byte, wrap int) {
