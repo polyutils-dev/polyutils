@@ -55,6 +55,7 @@ from any other non-alphabet bytes in the encoded stream.
 		flag.Usage()
 		return
 	}
+
 	if *flagVersion {
 		os.Stdout.WriteString("base32 (goreutils) 0.1.0")
 		return
@@ -62,20 +63,20 @@ from any other non-alphabet bytes in the encoded stream.
 
 	args := flag.Args()
 	f := os.Stdin
+
 	var err error
 
 	if len(args) > 2 {
 		die("extra operand'" + os.Args[2] + "'")
-	}
-	if len(args) == 1 && args[0] != "-" {
+	} else if len(args) == 1 && args[0] != "-" {
 		f, err = os.Open(args[0])
 		if err == os.ErrPermission {
 			die(args[0] + ": Permission denied")
-		}
-		if err != nil {
+		} else if err != nil {
 			die(args[0] + ": No such file or directory")
 		}
 	}
+
 	defer f.Close()
 
 	input, err := io.ReadAll(f)
@@ -92,6 +93,7 @@ from any other non-alphabet bytes in the encoded stream.
 
 func decode(in []byte, ignoreGarbage bool) {
 	var data string
+
 	if ignoreGarbage {
 		for _, c := range in {
 			if isValid(c) {
@@ -99,13 +101,14 @@ func decode(in []byte, ignoreGarbage bool) {
 			}
 		}
 	} else {
-		data = string(in[:])
+		data = string(in)
 	}
 
 	out, err := base32.StdEncoding.DecodeString(data)
 	if err != nil {
 		die("invalid input")
 	}
+
 	os.Stdout.Write(out)
 	os.Stdout.Write([]byte{'\n'})
 }
@@ -114,6 +117,7 @@ func encode(in []byte, wrap int) {
 	encoded := base32.StdEncoding.EncodeToString(in)
 	for i := 0; i < len(encoded); i++ {
 		print(string(encoded[i]))
+
 		if (i+1)%wrap == 0 {
 			println()
 		}

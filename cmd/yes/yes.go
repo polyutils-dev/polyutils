@@ -42,6 +42,7 @@ Repeatedly output a line with all specified STRING(s), or 'y'.
 	if str == "" {
 		str = "y"
 	}
+
 	str += "\n"
 
 	value := bytes.Repeat([]byte(str), 100_000_000)

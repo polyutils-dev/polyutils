@@ -51,6 +51,7 @@ specified by the sum of their values.
 	}
 
 	durations := make([]time.Duration, len(args))
+
 	var err error
 
 	for i, arg := range args {
