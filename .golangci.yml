@@ -11,3 +11,20 @@ linters:
     # these programs are doing, 99% of the time, they need to write to STDOUT.
     - forbidigo
 
+linters-settings:
+  depguard:
+    rules:
+      main:
+        list-mode: strict
+        allow:
+          - $gostd
+          - github.com/spf13/pflag
+        deny:
+          - pkg: "math/rand$"
+            desc: "Use math/rand/v2, or crypto/rand instead."
+          - pkg: "reflect"
+            desc: "You shouldn't need dynamic types. Make an issue if you do."
+          - pkg: "os/exec"
+            desc: "The point of this is to create a new version."
+          - pkg: "io/ioutil"
+            desc: "This is deprecated. Use io or os instead."
