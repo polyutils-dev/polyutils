@@ -114,8 +114,8 @@ func decode(in []byte, ignoreGarbage bool) {
 
 func encode(in []byte, wrap int) {
 	encoded := base64.StdEncoding.EncodeToString(in)
-	for i := 0; i < len(encoded); i++ {
-		print(string(encoded[i]))
+	for i, c := range encoded {
+		print(string(c))
 
 		if (i+1)%wrap == 0 {
 			println()
