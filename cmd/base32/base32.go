@@ -2,15 +2,33 @@ package main
 
 import (
 	"encoding/base32"
+	"errors"
 	"io"
 	"os"
 
 	flag "github.com/spf13/pflag"
 )
 
-var (
-	authors = []string{"Zia M"}
+const (
 	version = "0.1.0"
+	helpMsg = `Usage: base32 [OPTION]... [FILE]
+Base32 encode or decode FILE, or standard input, to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -d, --decode          decode data
+  -i, --ignore-garbage  when decoding, ignore non-alphabet characters
+  -w, --wrap=COLS       wrap encoded lines after COLS character (default 76).
+                          Use 0 to disable line wrapping
+      --help        display this help and exit
+      --version     output version information and exit
+
+The data are encoded as described for the base32 alphabet in RFC 4648.
+When decoding, the input may contain newlines in addition to the bytes of
+the formal base32 alphabet.  Use --ignore-garbage to attempt to recover
+from any other non-alphabet bytes in the encoded stream.
+`
 )
 
 func die(msg string) {
@@ -30,34 +48,19 @@ func main() {
 	flagIgnoreGarbage := flag.BoolP("ignore-garbage", "i", false, "when decoding, ignore non-alphabet characters")
 	flagWrap := flag.IntP("wrap", "w", 76, `wrap encoded lines after COLS characters (default 76).`)
 	flag.Usage = func() {
-		os.Stderr.WriteString(`Usage: base32 [OPTION]... [FILE]
-Base32 encode or decode FILE, or standard input, to standard output.
-
-With no FILE, or when FILE is -, read standard input.
-
-Mandatory arguments to long options are mandatory for short options too.
-  -d, --decode          decode data
-  -i, --ignore-garbage  when decoding, ignore non-alphabet characters
-  -w, --wrap=COLS       wrap encoded lines after COLS character (default 76).
-                          Use 0 to disable line wrapping
-      --help        display this help and exit
-      --version     output version information and exit
-
-The data are encoded as described for the base32 alphabet in RFC 4328.
-When decoding, the input may contain newlines in addition to the bytes of
-the formal base32 alphabet.  Use --ignore-garbage to attempt to recover
-from any other non-alphabet bytes in the encoded stream.
-`)
+		os.Stderr.WriteString(helpMsg)
 	}
 	flag.Parse()
 
 	if *flagHelp {
 		flag.Usage()
+
 		return
 	}
 
 	if *flagVersion {
-		os.Stdout.WriteString("base32 (goreutils) 0.1.0")
+		os.Stdout.WriteString("base32 (goreutils) " + version)
+
 		return
 	}
 
@@ -70,7 +73,7 @@ from any other non-alphabet bytes in the encoded stream.
 		die("extra operand'" + os.Args[2] + "'")
 	} else if len(args) == 1 && args[0] != "-" {
 		f, err = os.Open(args[0])
-		if err == os.ErrPermission {
+		if errors.Is(err, os.ErrPermission) {
 			die(args[0] + ": Permission denied")
 		} else if err != nil {
 			die(args[0] + ": No such file or directory")

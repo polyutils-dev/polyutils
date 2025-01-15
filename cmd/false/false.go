@@ -7,10 +7,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-var (
-	authors = []string{"Zia M"}
-	version = "0.1.0"
-)
+const version = "0.1.0"
 
 func main() {
 	flagHelp := flag.Bool("help", false, "display this help and exit")
@@ -35,7 +32,7 @@ for details about the options it supports.
 	}
 
 	if *flagVersion {
-		os.Stdout.WriteString("false (goreutils) 0.1.0\n")
+		os.Stdout.WriteString("false (goreutils) 0.1.0" + version + "\n")
 	}
 
 	os.Exit(1)

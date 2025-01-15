@@ -8,6 +8,8 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
+var version = "0.1.0"
+
 func die(msg string) {
 	os.Stderr.WriteString("sleep: " + msg + "\n")
 	os.Stderr.WriteString("Try 'sleep --help' for more information.\n")
@@ -37,11 +39,13 @@ specified by the sum of their values.
 
 	if *flagHelp {
 		flag.Usage()
+
 		return
 	}
 
 	if *flagVersion {
-		os.Stdout.WriteString("sleep (goreutils) 0.1.0\n")
+		os.Stdout.WriteString("sleep (goreutils) " + version + "\n")
+
 		return
 	}
 

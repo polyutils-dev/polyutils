@@ -8,10 +8,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-var (
-	authors = []string{"Zia M"}
-	version = "0.1.0"
-)
+const version = "0.1.0"
 
 func main() {
 	flagHelp := flag.Bool("help", false, "display this help and exit")
@@ -29,11 +26,13 @@ Same as id -un.
 
 	if *flagHelp {
 		flag.Usage()
+
 		return
 	}
 
 	if *flagVersion {
-		os.Stdout.WriteString("whoami (goreutils) 0.1.0\n")
+		os.Stdout.WriteString("whoami (goreutils) " + version + "\n")
+
 		return
 	}
 

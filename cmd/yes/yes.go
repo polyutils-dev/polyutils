@@ -9,10 +9,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-var (
-	authors = []string{"Zia M"}
-	version = "0.1.0"
-)
+const version = "0.1.0"
 
 func main() {
 	flagHelp := flag.Bool("help", false, "display this help and exit")
@@ -30,11 +27,13 @@ Repeatedly output a line with all specified STRING(s), or 'y'.
 
 	if *flagHelp {
 		flag.Usage()
+
 		return
 	}
 
 	if *flagVersion {
-		os.Stdout.WriteString("yes (goreutils) 0.1.0\n")
+		os.Stdout.WriteString("yes (goreutils) " + version + "\n")
+
 		return
 	}
 
@@ -43,9 +42,7 @@ Repeatedly output a line with all specified STRING(s), or 'y'.
 		str = "y"
 	}
 
-	str += "\n"
-
-	value := bytes.Repeat([]byte(str), 100_000_000)
+	value := bytes.Repeat([]byte(str+"\n"), 100_000_000)
 
 	for {
 		os.Stdout.Write(value)
