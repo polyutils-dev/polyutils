@@ -15,7 +15,7 @@ func main() {
 	flag.Usage = func() {
 		os.Stderr.WriteString(`Usage: false [ignored command line arguments]
   or:  false OPTION
-Exit with a status code indicating success.
+Exit with a status code indicating failure.
 
       --help        display this help and exit
       --version     output version information and exit
