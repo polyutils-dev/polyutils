@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Unlicense
+
 for arg in ARGS
     if arg == "--help"
         println("""Print the user name associated with the current effective user ID.

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Unlicense
+
 for arg in ARGS
     if arg == "--help"
         println("""Usage: false [ignored command line arguments]

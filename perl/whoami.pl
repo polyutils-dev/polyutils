@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Unlicense
+
 use strict;
 use warnings;
 

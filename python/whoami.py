@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Unlicense
+
 import argparse
 import os
 import sys
