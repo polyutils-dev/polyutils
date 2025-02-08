@@ -5,117 +5,17 @@ The GNU coreutils, rewritten in every language.
 [![License: Unlicense](https://img.shields.io/badge/license-unlicense-blue.svg)](./LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/codeberg.org/polyutils/polyutils)](https://goreportcard.com/report/codeberg.org/polyutils/polyutils)
 
-## Roadmap
+## Contributing
 
-* [ ] `chcon`
-* [ ] `chgrp`
-* [ ] `chown`
-* [ ] `chmod`
-* [ ] `cp`
-* [ ] `dd`
-* [ ] `df`
-* [ ] `dir`
-* [ ] `dircolors`
-* [ ] `install`
-* [ ] `ln`
-* [ ] `ls`
-* [ ] `mkdir`
-* [ ] `mkfifo`
-* [ ] `mknod`
-* [ ] `mktemp`
-* [ ] `mv`
-* [ ] `realpath`
-* [ ] `rm`
-* [ ] `rmdir`
-* [ ] `shred`
-* [ ] `sync`
-* [ ] `touch`
-* [ ] `truncate`
-* [ ] `vdir`
-* [ ] `b2sum`
-* [x] `base32`
-* [x] `base64`
-* [ ] `basenc`
-* [ ] `cat`
-* [ ] `cksum`
-* [ ] `comm`
-* [ ] `csplit`
-* [ ] `cut`
-* [ ] `expand`
-* [ ] `fmt`
-* [ ] `fold`
-* [ ] `head`
-* [ ] `join`
-* [ ] `md5sum`
-* [ ] `nl`
-* [ ] `numfmt`
-* [ ] `od`
-* [ ] `paste`
-* [ ] `ptx`
-* [ ] `pr`
-* [ ] `sha1sum`
-* [ ] `sha224sum`
-* [ ] `sha256sum`
-* [ ] `sha384sum`
-* [ ] `sha512sum`
-* [ ] `shuf`
-* [ ] `sort`
-* [ ] `split`
-* [ ] `sum`
-* [ ] `tac`
-* [ ] `tail`
-* [ ] `tr`
-* [ ] `tsort`
-* [ ] `unexpand`
-* [ ] `uniq`
-* [ ] `wc`
-* [ ] `arch`
-* [ ] `basename`
-* [ ] `chroot`
-* [ ] `date`
-* [ ] `dirname`
-* [ ] `du`
-* [x] `echo`
-* [ ] `env`
-* [ ] `expr`
-* [ ] `factor`
-* [x] `false`
-* [ ] `groups`
-* [ ] `hostid`
-* [ ] `id`
-* [ ] `link`
-* [ ] `logname`
-* [ ] `nice`
-* [ ] `nohup`
-* [ ] `nproc`
-* [ ] `pathchk`
-* [ ] `pinky`
-* [ ] `printenv`
-* [ ] `printf`
-* [ ] `pwd`
-* [ ] `readlink`
-* [ ] `runcon`
-* [ ] `seq`
-* [x] `sleep`
-* [ ] `stat`
-* [ ] `stdbuf`
-* [ ] `stty`
-* [ ] `tee`
-* [ ] `test`
-* [ ] `timeout`
-* [x] `true`
-* [ ] `tty`
-* [ ] `uname`
-* [ ] `unlink`
-* [ ] `uptime`
-* [ ] `users`
-* [ ] `who`
-* [x] `whoami`
-* [x] `yes`
-  * So some info: when built with `go`, it's extremely fast, but the binary is
-    bigger. However, with `tinygo`, it's about half as fast, but the binary is
-    much smaller. You should choose which is more important to you.
-* [ ] `[`
+If you'd like to add a util, please make an issue first and then create a pull
+request when it is assigned to you.
+
+If it is not functional, and it has not been touched for 90 days, the pull
+request will be marked as `stale` and the issue will be unassigned, and open
+for the taking.
+
+If you do _not_ want to be assigned, please specify that in the issue
+description.
 
 ## License
 
