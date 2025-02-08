@@ -3,7 +3,7 @@ import argparse
 import os
 import sys
 
-import lib
+__version__ = "0.1.0"
 
 def main() -> int:
     parser = argparse.ArgumentParser(prog="whoami",
@@ -23,7 +23,7 @@ Same as id -un.
         return 0
 
     if args.version:
-        print("whoami (python polyutils) " + lib.__version__)
+        print("whoami (python polyutils) " + __version__)
         return 0
 
     print(os.getlogin())
