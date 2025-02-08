@@ -1,9 +1,9 @@
-# goreutils
+# polyutils
 
-The GNU coreutils, rewritten in Go.
+The GNU coreutils, rewritten in every language.
 
 [![License: Unlicense](https://img.shields.io/badge/license-unlicense-blue.svg)](./LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/codeberg.org/goreutils/goreutils)](https://goreportcard.com/report/codeberg.org/goreutils/goreutils)
+[![Go Report Card](https://goreportcard.com/badge/codeberg.org/polyutils/polyutils)](https://goreportcard.com/report/codeberg.org/polyutils/polyutils)
 
 ## Roadmap
 
